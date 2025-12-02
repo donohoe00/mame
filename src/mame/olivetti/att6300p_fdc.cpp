@@ -63,8 +63,8 @@ uint8_t isa8_fdc_6300p_device::rc_r()
 void isa8_fdc_6300p_device::rc_w(uint8_t data)
 {
 	static const int rates[4] = { 500000, 300000, 250000, 250000 };
-	m_rate = rates[data&3];
-	m_fdc->set_rate(m_rate);
+	m_rate = data & 3;
+	m_fdc->set_rate(rates[m_rate]);
 }
 
 DEFINE_DEVICE_TYPE(ISA8_FDC_6300P,   isa8_fdc_6300p_device,   "isa8_fdc_6300p",   "ISA 8bits 6300 Plus FDC hookup")

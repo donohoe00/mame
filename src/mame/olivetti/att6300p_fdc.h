@@ -26,5 +26,5 @@ protected:
     void rc_w(uint8_t data);
 
 private:
-    int m_rate;
+    uint8_t m_rate;
 };
